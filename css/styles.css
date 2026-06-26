@@ -373,49 +373,71 @@ h2 {
 
 /* Responsive Media Queries */
 @media (max-width: 968px) {
+    /* 1. Forzar a que todas las pantallas se estiren de forma fluida según su texto */
+    .slide {
+        height: auto !important;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: visible !important;
+    }
+
     .split-layout, .split-layout.reverse {
         flex-direction: column;
-        height: auto; /* Permite que la sección crezca si el contenido lo pide */
-        min-height: 100vh; /* Asegura que al menos ocupe toda la pantalla del celular */
+        height: auto !important;
     }
     
+    /* 2. Controlar la altura de la foto para que deje suficiente espacio abajo */
     .slide-media {
-        width: 100%;
-        height: 45vh; /* Le damos un alto fijo y controlado a la foto en el cel */
+        width: 100% !important;
+        height: 35vh !important; /* Bajado a 35% del alto del cel para dar más aire al texto */
+        min-height: 240px;
         position: relative;
     }
     
+    /* 3. El contenedor de texto respira libremente */
     .slide-content {
-        width: 100%;
-        height: auto; /* 🌟 CLAVE: El texto ya no se corta, crece libremente según lo que ocupe */
-        min-height: 55vh;
-        padding: 2.5rem 1.5rem; /* Espaciado más cómodo para leer en pantallas táctiles */
+        width: 100% !important;
+        height: auto !important;
+        padding: 2rem 1.5rem 4rem 1.5rem !important; /* 4rem abajo para que el texto destacado nunca se corte */
+        box-sizing: border-box;
         justify-content: flex-start;
-        overflow: visible; /* Elimina bloqueos visuales */
     }
-    
+
+    /* 4. Optimización estricta para evitar desbordes en tipografía */
     h2 { 
-        font-size: 1.8rem; 
-        margin-bottom: 1rem;
+        font-size: 1.6rem !important; 
+        margin-bottom: 0.8rem !important;
     }
     
     .story-paragraph {
-        font-size: 1.05rem;
-        line-height: 1.5;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0.6rem !important;
     }
     
+    /* 🔥 AQUÍ ESTÁ EL ARREGLO PARA TU CLASE: Más compacta y con espacio seguro */
     .story-paragraph-highlight {
-        font-size: 1.15rem;
-        line-height: 1.5;
-        margin-top: 0.8rem;
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+        margin-top: 1rem !important;
+        padding-bottom: 1.5rem !important; /* Colchón de seguridad anti-corte */
+        display: block !important;
+    }
+
+    /* 5. Asegurar visibilidad inmediata en móviles ignorando retrasos de JS */
+    .story-paragraph, 
+    .story-paragraph-highlight, 
+    h2, 
+    .chapter-label {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: none !important;
     }
     
-    .hero-number { font-size: 5rem; }
-    
-    .mosaic-wrapper {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .mosaic-item { display: none; } /* Mantiene el foco limpio en la carta en móviles */
+    /* Ajustes extras de elementos globales para celular */
+    .hero-number { font-size: 4rem; }
+    .gold-climax-number { font-size: 3rem; }
+    .mosaic-wrapper { grid-template-columns: 1fr; gap: 1rem; }
+    .mosaic-item { display: none; }
 }
