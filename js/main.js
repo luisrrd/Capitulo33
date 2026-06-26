@@ -69,9 +69,10 @@ function revealHeroText() {
     const paragraphs = document.querySelectorAll('.hero-text-story p, #start-story-btn');
     paragraphs.forEach((p, idx) => {
         setTimeout(() => {
+            p.classList.add('visible'); // Añade la clase que fuerza la visibilidad en CSS
             p.style.opacity = '1';
             p.style.transform = 'translateY(0)';
-        }, idx * 400);
+        }, idx * 400); // Aparecen uno a uno con estilo Apple
     });
 }
 
