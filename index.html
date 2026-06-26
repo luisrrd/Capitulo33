@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33 Capítulos</title>
+    <meta name="description" content="Una historia cinematográfica interactiva sobre una vida extraordinaria.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Accesibilidad: Saltar al contenido -->
+    <a href="#prologo" class="sr-only">Saltar al contenido de la historia</a>
+
+    <!-- UI Global Controls -->
+    <div class="global-controls">
+        <button id="audio-toggle" class="control-btn" aria-label="Activar música de fondo" aria-pressed="false">
+            <svg class="icon-mute" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="progress-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress-bar" id="story-progress"></div>
+    </div>
+
+    <!-- Main Cinematic Container -->
+    <main id="story-container">
+
+        <!-- PRÓLOGO -->
+        <section id="prologo" class="slide full-screen center-content black-bg" data-step="0">
+            <div id="prologue-trigger-wrapper">
+                <button id="enter-experience-btn" class="btn-premium">Entrar a la experiencia</button>
+            </div>
+    
+            <div class="prologo-text-wrapper hidden" id="prologo-text">
+                <p class="prologo-phrase" data-delay="0">Dicen que la vida se mide en años...</p>
+                <p class="prologo-phrase" data-delay="1">Pero en realidad...</p>
+                <p class="prologo-phrase" data-delay="2">Se mide en los capítulos que nos transforman.</p>
+            </div>
+        </section>
+
+        <!-- PANTALLA INICIAL -->
+        <section id="inicio" class="slide full-screen center-content deep-blue-bg hidden" data-step="1">
+            <canvas id="stars-canvas"></canvas>
+            <div class="floating-elements-container" id="balloons-container"></div>
+            
+            <div class="content-hero header-fade">
+                <h1 class="hero-number scale-up">33</h1>
+                <div class="hero-text-story">
+                    <p>Cada vida es una historia.</p>
+                    <p>Algunas personas llegan desde el primer capítulo.</p>
+                    <p>Otras aparecen cuando la historia ya ha comenzado.</p>
+                    <p class="highlight-text">Hoy celebras 33 capítulos de una vida extraordinaria.</p>
+                </div>
+                <button id="start-story-btn" class="btn-premium">Comenzar la historia</button>
+            </div>
+        </section>
+
+        <!-- CAPÍTULO I -->
+        <section id="capitulo1" class="slide full-screen split-layout dynamic-reveal" data-step="2">
+            <div class="slide-media parallax-wrapper">
+                <img data-src="img/foto1.jpg" alt="Representación de pequeños momentos compartidos" class="lazy-image parallax-img">
+            </div>
+            <div class="slide-content text-left">
+                <span class="chapter-label">Capítulo I</span>
+                <h2>Los pequeños momentos</h2>
+                <p class="story-paragraph">Los capítulos más importantes rara vez comienzan con grandes acontecimientos.</p>
+                <p class="story-paragraph">Empiezan con pequeños momentos como estos...</p>
+                <p class="story-paragraph-highlight">Una conversación. Una sonrisa. Un instante que termina convirtiéndose en un recuerdo.</p>
+            </div>
+        </section>
+
+        <!-- CAPÍTULO II -->
+        <section id="capitulo2" class="slide full-screen split-layout reverse dynamic-reveal sunrise-bg" data-step="3">
+            <div class="slide-media parallax-wrapper">
+                <img data-src="img/foto2.jpg" alt="Visualización del camino hacia nuevos horizontes" class="lazy-image parallax-img">
+            </div>
+            <div class="slide-content text-right">
+                <span class="chapter-label">Capítulo II</span>
+                <h2>Descubriendo el camino</h2>
+                <p class="story-paragraph">Cada día trae nuevas preguntas.</p>
+                <p class="story-paragraph">Nuevos sueños.</p>
+                <p class="story-paragraph">Nuevas oportunidades.</p>
+                <p class="story-paragraph-highlight">Así continúa escribiéndose una gran historia.</p>
+            </div>
+        </section>
+
+        <!-- CAPÍTULO III -->
+        <section id="capitulo3" class="slide full-screen split-layout dynamic-reveal warm-bg" data-step="4">
+            <div class="slide-media parallax-wrapper">
+                <img data-src="img/foto3.jpg" alt="Instantes de paz y tranquilidad" class="lazy-image parallax-img">
+            </div>
+            <div class="slide-content text-left">
+                <span class="chapter-label">Capítulo III</span>
+                <h2>La calma también escribe historias</h2>
+                <p class="story-paragraph">También existen capítulos tranquilos.</p>
+                <p class="story-paragraph">Donde aparentemente no sucede nada.</p>
+                <p class="story-paragraph-highlight">Pero son precisamente esos momentos los que el corazón decide guardar para siempre.</p>
+            </div>
+        </section>
+
+        <!-- CAPÍTULO IV -->
+        <section id="capitulo4" class="slide full-screen split-layout reverse dynamic-reveal soft-lights-bg" data-step="5">
+            <div class="slide-media parallax-wrapper">
+                <img data-src="img/foto4.jpg" alt="Celebración de la alegría compartida" class="lazy-image parallax-img">
+            </div>
+            <div class="slide-content text-right">
+                <span class="chapter-label">Capítulo IV</span>
+                <h2>Disfrutar el presente</h2>
+                <p class="story-paragraph">Vivir también significa reír.</p>
+                <p class="story-paragraph">Intentarlo otra vez.</p>
+                <p class="story-paragraph">Disfrutar el camino.</p>
+                <p class="story-paragraph-highlight">Y celebrar cada momento compartido.</p>
+            </div>
+        </section>
+
+        <!-- CAPÍTULO V -->
+        <section id="capitulo5" class="slide full-screen center-content elegant-dark-bg final-climax" data-step="6">
+            <div class="confetti-canvas-container" id="confetti-container"></div>
+    
+        <div class="mosaic-wrapper">
+            <div class="mosaic-item m-img-1"><img data-src="img/foto1.jpg" class="lazy-image" alt="Miniatura recuerdo 1"></div>
+            <div class="mosaic-item m-img-2"><img data-src="img/foto2.jpg" class="lazy-image" alt="Miniatura recuerdo 2"></div>
+        
+        <div class="mosaic-center-content">
+            <h2 class="gold-climax-number">33</h2>
+            <p class="climax-letter">
+                No conocí los primeros 30 capítulos de tu historia, pero me siento afortunado de haber llegado para vivir tres de ellos contigo. Hoy celebras 33 años, y yo celebro el privilegio de formar parte de una pequeña parte de ese hermoso recorrido. <strong>Feliz cumpleaños.</strong>
+            </p>
+            <button id="next-chapter-34-btn" class="btn-premium gold-variant">Abrir el capítulo 34</button>
+        </div>
+        
+            <div class="mosaic-item m-img-3"><img data-src="img/foto3.jpg" class="lazy-image" alt="Miniatura recuerdo 3"></div>
+            <div class="mosaic-item m-img-4"><img data-src="img/foto4.jpg" class="lazy-image" alt="Miniatura recuerdo 4"></div>
+        </div>
+
+    </section>
+
+        <!-- CAPÍTULO VI (EPÍLOGO) -->
+        <section id="capitulo6" class="slide full-screen center-content deep-sunrise-bg epilogue-section hidden" data-step="7">
+            <div class="epilogue-content">
+                <p class="epilogue-text">Las mejores historias nunca terminan con un 'fin'. Solo estan a la espera del siguiente capítulo.</p>
+                <p class="epilogue-text-highlight">Que este nuevo año esté lleno de paz, de Dios, sueños cumplidos, personas que sumen a tu vida y momentos que algún día también se convertirán en recuerdos.</p>
+                <h3 class="final-signature">Feliz cumpleaños Ka, Te quiero mucho.</h3>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Hidden Audio Native Element -->
+    <audio id="bg-audio" src="audio/cinematic-background.mp3" loop preload="auto"></audio>
+
+    <!-- App Engine JavaScript -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
